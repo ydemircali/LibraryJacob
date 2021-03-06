@@ -1,0 +1,34 @@
+@model List<LibraryJacob.Models.UserBookModel>
+@{
+    ViewData["Title"] = "Admin Page";
+}
+
+<div class="col-md-12">
+    <table id="userBooksTable" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>UserName</th>
+                <th>Action</th>
+                <th>Action Date</th>
+                <th>Book Title</th>
+                <th>Book Category</th>
+                <th>Book Sub Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                 <tr>
+                    <td>@item.UserName</td>
+                    <td>@item.Action</td>
+                    <td>@item.ActionDate</td>
+                    <td>@item.BookTitle</td>
+                    <td>@item.BookCategory</td>
+                    <td>@item.BookSubCategory</td>
+                </tr>
+            }
+           
+            
+        </tbody>
+    </table>
+</div>

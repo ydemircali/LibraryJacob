@@ -1,0 +1,28 @@
+@model LibraryJacob.Models.Book
+@{
+    ViewData["Title"] = "Book Detail - "+Model.Title;
+    bool isAddedLibrary = (ViewData["AddedLibrary"] as string) == "1" ? true : false;  
+}
+
+<h1>@Model.Title</h1>
+
+<p>Author: @Model.Author</p>
+<p>Category: @Model.Genre</p>
+<p>Sub Category: @Model.SubGenre</p>
+<p>Page: @Model.Page</p>
+<p>Publisher: @Model.Publisher</p>
+
+<div>
+    @if (isAddedLibrary)
+    {
+        <label class="label">Added Your Library</label>    
+    }
+    else
+    {
+        <a href="#" class="addMyLibrary" id="@Model.Id">Add Your Library</a>
+    }
+
+    <br>
+
+    <a asp-controller="Books" asp-action="Index">Back to List</a>
+</div>
